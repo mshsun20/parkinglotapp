@@ -8,6 +8,9 @@ const Navbar = () => {
         <div className="navmanu">
           <NavLink to='/'>Home</NavLink>
         </div>
+        {/* <div className="navmanu">
+          <NavLink to='/account'>Account</NavLink>
+        </div> */}
         <div className="navmanu">
           <NavLink to='/usr'>Users</NavLink>
         </div>
@@ -25,6 +28,9 @@ const Navbar = () => {
         </div>
         <div className="navmanu">
           <NavLink to='/drvr'>Drivers</NavLink>
+        </div>
+        <div className="navmanu">
+          <NavLink to='/ticket'>Tickets</NavLink>
         </div>
       </div>
     </>

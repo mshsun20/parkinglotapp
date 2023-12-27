@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import server from '../Server'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
     let name, value
     const [vl, setVl] = useState({})
-    // const [adm, setAdm] = useState()
+    const [adm, setAdm] = useState()
+    const navig = useNavigate()
 
     const hndlinp = (e) => {
         name = e.target.name
@@ -17,10 +19,17 @@ const Login = () => {
         const {accemail, accpass} = vl
 
         try {
-            const res = await axios.post(`${server}/admlg`, {accemail, accpass})
+            const res = await axios.post(`${server}/admin/login`, {accemail, accpass})
             const data = await res.data
             console.log(data)
-            // setAdm(data.data)
+            setAdm(data.data)
+            if (data.statuscode === 200) {
+                window.alert(data.success)
+                navig('/')
+            }
+            else {
+                window.alert(data.error)
+            }
         } catch (error) {
             console.error(error)
         }

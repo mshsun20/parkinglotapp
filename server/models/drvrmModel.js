@@ -1,34 +1,33 @@
 const mongoose = require('mongoose')
 
-const trnsprmSchema = new mongoose.Schema({
-    trnspr_name: {
+const DrvrmSchema = new mongoose.Schema({
+    drvr_name: {
         type: String,
         required: true,
     },
-    trnspr_phn: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    trnspr_eml: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    trnspr_addrss: {
+    drvr_phn: {
         type: String,
         required: true,
     },
-    trnspr_pincode: {
+    drvr_eml: {
         type: String,
         required: true,
     },
-    trnspr_dt: {
+    drvr_addrss: {
         type: String,
-        default: Date.now,
+        required: true,
+    },
+    drvr_pincode: {
+        type: String,
+        required: true,
+    },
+    drv_lic_no: {
+        type: String,
+        required: true,
     }
+},
+{
+    timestamps: true
 })
 
-const Transporterm = mongoose.model('transporter', trnsprmSchema)
-
-module.exports = Transporterm
+module.exports = mongoose.model('Driver', DrvrmSchema)

@@ -1,39 +1,39 @@
 const mongoose = require('mongoose')
 
-const drvrmSchema = new mongoose.Schema({
-    drvr_name: {
+const UserSchema = new mongoose.Schema({
+    uname: {
         type: String,
         required: true,
     },
-    drvr_phn: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    drvr_eml: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    drvr_addrss: {
+    uphn: {
         type: String,
         required: true,
     },
-    drvr_pincode: {
+    uemail: {
         type: String,
         required: true,
     },
-    drv_lic_no: {
+    upass: {
         type: String,
         required: true,
-        unique: true,
     },
-    drvr_dt: {
+    uaddrss: {
         type: String,
-        default: Date.now,
+    },
+    upincode: {
+        type: String,
+    },
+    company: {
+        type: String,
+        required: true,
+    },
+    empcode: {
+        type: String,
+        required: true,
     }
+},
+{
+    timestamps: true
 })
 
-const Driverm = mongoose.model('driver', drvrmSchema)
-
-module.exports = Driverm
+module.exports = mongoose.model('User', UserSchema)

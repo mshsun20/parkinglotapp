@@ -1,10 +1,6 @@
 const mongoose = require('mongoose')
 
-const url = 'mongodb+srv://mshshyamgroup:msh.sm=32@parkinglotdb.qrdsk4i.mongodb.net/?retryWrites=true&w=majority'
-
-// mongoose.connect(url).then(() => {
-//     console.log(`DB Connection Successfull...`);
-// }).catch(err => console.error(err))
+const url = 'mongodb+srv://mrigankasekharsm:ms.sm22@parkinglotdb.xixl0kg.mongodb.net/?retryWrites=true&w=majority'
 
 const conn = async () => {
     try {

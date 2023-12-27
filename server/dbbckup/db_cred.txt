@@ -1,0 +1,4 @@
+
+connection_url:	mongodb+srv://mrigankasekharsm:ms.sm22@parkinglotdb.xixl0kg.mongodb.net/?retryWrites=true&w=majority
+username:	mrigankasekharsm
+password:	ms.sm22

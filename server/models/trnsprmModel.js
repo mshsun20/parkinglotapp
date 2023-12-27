@@ -1,32 +1,29 @@
 const mongoose = require('mongoose')
 
-const divmSchema = new mongoose.Schema({
-    divsn: {
+const TrnsprmSchema = new mongoose.Schema({
+    trnspr_name: {
         type: String,
         required: true,
     },
-    country: {
+    trnspr_phn: {
         type: String,
         required: true,
     },
-    state: {
+    trnspr_eml: {
         type: String,
         required: true,
     },
-    location: {
+    trnspr_addrss: {
         type: String,
         required: true,
     },
-    pincode: {
+    trnspr_pincode: {
         type: String,
         required: true,
-    },
-    div_dt: {
-        type: String,
-        default: Date.now,
     }
+},
+{
+    timestamps: true
 })
 
-const Divisionm = mongoose.model('division', divmSchema)
-
-module.exports = Divisionm
+module.exports = mongoose.model('Transporter', TrnsprmSchema)

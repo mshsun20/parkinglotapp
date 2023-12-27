@@ -1,10 +1,9 @@
 const mongoose = require('mongoose')
 
-const ticketSchema = new mongoose.Schema({
+const TicketSchema = new mongoose.Schema({
     ticketno: {
         type: String,
         required: true,
-        unique: true,
     },
     pstatus: {
         type: String,
@@ -29,13 +28,10 @@ const ticketSchema = new mongoose.Schema({
     vclid: {
         type: String,
         required: true,
-    },
-    tck_dt: {
-        type: String,
-        default: Date.now,
     }
+},
+{
+    timestamps: true
 })
 
-const Ticket = mongoose.model('ticket', ticketSchema)
-
-module.exports = Ticket
+module.exports = mongoose.model('Ticket', TicketSchema)

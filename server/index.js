@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const dotenv = require('dotenv')
-require('./dbms/dbcon')
+require('./db/dbcon')
 const routes = require('./routes/route')
 
 const app = express()
@@ -13,14 +13,14 @@ app.use(cors({
     origin: '*',
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true,
-    optionsSuccessStatus: 200,
+    optionsSuccessStatus: 200
 }))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static('uploads'))
 app.use('/', routes)
 
-const port = 5000
+const port = 5005
 const host = 'localhost'
 
 app.listen(port, host, () => {

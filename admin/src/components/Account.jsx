@@ -17,7 +17,7 @@ const Account = () => {
 
         try {
             if (accpass===acnfps) {
-                const res = await axios.post(`${server}/admpsh`, {accname, accphn, accemail, accpass, accaddrss, accpincode, company, empcode, dept, desig, roles})
+                const res = await axios.post(`${server}/admin/register`, {accname, accphn, accemail, accpass, accaddrss, accpincode, company, empcode, dept, desig, roles})
                 const data = await res.data
                 console.log(data)
                 if (data.statuscode === 200) {
